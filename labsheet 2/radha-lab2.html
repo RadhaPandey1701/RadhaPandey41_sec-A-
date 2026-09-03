@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Mode</title>
+    <style>
+        :root {
+            --bg: white;
+            --text: black;
+        }
+        .dark {
+            --bg: #222;
+            --text: white;
+        }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 80px;
+            transition: background 0.3s, color 0.3s;
+        }
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to My Website</h1>
+    <p>This is a simple dark mode landing page.</p>
+    <button onclick="toggleMode()">Dark Mode</button>
+    <script>
+        function toggleMode() {
+            document.body.classList.toggle("dark");
+        }
+    </script>
+</body>
+</html>
+<!-- Task 2 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Grid</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        img {
+            width: 250px;
+            height: 170px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+            border-radius: 6px;
+        }
+        img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>My Photo Gallery</h1>
+    <div class="gallery">
+        <img src="https://picsum.photos/250/170?1" alt="Photo 1">
+        <img src="https://picsum.photos/250/170?2" alt="Photo 2">
+        <img src="https://picsum.photos/250/170?3" alt="Photo 3">
+        <img src="https://picsum.photos/250/170?4" alt="Photo 4">
+        <img src="https://picsum.photos/250/170?5" alt="Photo 5">
+        <img src="https://picsum.photos/250/170?6" alt="Photo 6">
+    </div>
+</body>
+</html>
+<!-- Task 3 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 40px;
+        }
+        input {
+            padding: 10px;
+            width: 250px;
+        }
+        button {
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+        li {
+            margin: 10px;
+            list-style: none;
+        }
+        #error {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Todo Application</h1>
+    <input id="task" placeholder="Enter a task">
+    <button onclick="addTask()">Add</button>
+    <p id="error"></p>
+    <ul id="list"></ul>
+    <script>
+        function addTask() {
+            let taskInput = document.getElementById("task");
+            let task = taskInput.value;
+            let errorElement = document.getElementById("error");
+
+            if (task.trim() === "") {
+                errorElement.innerText = "Please enter a task!";
+                return;
+            }
+            errorElement.innerText = "";
+            
+            let li = document.createElement("li");
+            li.innerHTML = task + ' <button onclick="this.parentElement.remove()">Delete</button>';
+            document.getElementById("list").appendChild(li);
+            taskInput.value = "";
+        }
+    </script>
+</body>
+</html>
