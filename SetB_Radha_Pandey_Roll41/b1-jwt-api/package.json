@@ -1,0 +1,17 @@
+{
+  "name": "b1-jwt-api",
+  "version": "1.0.0",
+  "description": "Practical B1 - JWT Authentication API (Radha Pandey, B.Tech CSE, Roll No 41)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  },
+  "author": "Radha Pandey (B.Tech CSE, Roll No 41)",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2"
+  }
+}
